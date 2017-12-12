@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun Nov 12 10:49:48 2017
@@ -29,8 +30,8 @@ def activation_layer(x,dev=False):
 W1 = np.random.randn(nn_input_dim,nn_hidlay_dim)/np.sqrt(nn_input_dim)
 b1 = np.zeros((1,nn_hidlay_dim))
 W2 = np.random.randn(nn_hidlay_dim,nn_output_dim)/np.sqrt(nn_hidlay_dim)
-b
-y1=y2 = np.zeros((1,nn_output_dim))
+b2 = np.zeros((1,nn_output_dim))
+y1=y
 y = y.reshape(-1,1)
 for i in range(0,num_pas):
     #前向传播
@@ -64,8 +65,8 @@ h = 0.01
 xx1,xx2 = np.meshgrid(np.arange(x1_min,x1_max,h),np.arange(x2_min,x2_max,h))
 Z = pred_fun(np.c_[xx1.ravel(),xx2.ravel()])
 Z = Z.reshape(xx1.shape)
-plt.conto1urf(xx1,xx2,Z,cmap=plt.cm.Spectral)
-plt.scatter(x[:,0],x[:,1],c=y,cmap=plt.cm.Spectral)
+plt.contourf(xx1,xx2,Z,cmap=plt.cm.Spectral)
+plt.scatter(x[:,0],x[:,1],c=y1,cmap=plt.cm.Spectral)
 plt.show()
 
 y_hat=pred_fun(x)
